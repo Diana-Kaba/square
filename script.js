@@ -8,7 +8,7 @@ let leftOffset = 0; //  координата по Х
 let topOffset = 0; //  координата по Y
 
 let box = document.getElementById("box");
-box.addEventListener("click", speed);
+let count = 0;
 
 function moveBox() {
   // двигаем квадратик
@@ -60,8 +60,7 @@ function speed() {
   //   box.innerHTML = time; // записали информацию о новом времени на квадратике
   //   clearInterval(intervalId); // Очищаем старый интервал
   //   intervalId = setInterval(moveBox, time); // устанавливаем новый
-  let count = 0;
-  if (box == "click") {
+  if (box.addEventListener("click", speed)) {
     count++;
     time += 100;
     box.innerHTML += count;
