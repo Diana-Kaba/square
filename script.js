@@ -10,6 +10,7 @@ let topOffset = 0; //  координата по Y
 let box = document.getElementById("box");
 box.addEventListener("click", speed);
 let count = 0;
+let inform = document.getElementById("information");
 
 function moveBox() {
   // двигаем квадратик
@@ -63,11 +64,13 @@ function speed() {
   //   intervalId = setInterval(moveBox, time); // устанавливаем новый
   count++;
   time -= 100;
-  box.innerHTML += count;
+  clearInterval(intervalId);
+  intervalId = setInterval(moveBox, time);
+  inform.innerHTML += count;
 
   if (count == 10) {
     clearInterval(intervalId);
-    box.innerHTML = "Ти виграв!";
+    inform.innerHTML = "Ти виграв!";
   }
 }
 
