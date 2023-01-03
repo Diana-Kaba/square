@@ -62,7 +62,7 @@ function speed() {
   //   clearInterval(intervalId); // Очищаем старый интервал
   //   intervalId = setInterval(moveBox, time); // устанавливаем новый
   count++;
-  time += 100;
+  time -= 100;
   box.innerHTML += count;
 
   if (count == 10) {
